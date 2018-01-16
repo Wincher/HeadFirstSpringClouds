@@ -1,0 +1,24 @@
+server:
+  port: 8134
+  context-path: /
+spring:
+  application:
+    name: RETRY-SERVICE
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true #启用重试机制
+
+
+
+eureka:
+  client:
+    service-url:
+      ##单点配置
+      ##defaultZone: http://localhost:8220/eureka
+      ##高可用配置
+      defaultZone: http://localhost:8120/eureka/,http://localhost:8220/eureka/
+
+
+
+
